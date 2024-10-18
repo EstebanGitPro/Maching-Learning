@@ -1,0 +1,21 @@
+El modelo de regresión lineal con regularización muestra un MSE razonable (362.02) y un R² de 0.3463, lo que indica que aproximadamente el 34.6% de la variación de los puntajes en el conjunto de validación es explicada por este modelo. El MAPE de 10.96% quiere decir que, en promedio, las predicciones se desvían un 10.96% de los valores reales.
+
+
+
+El KNN tiene dificultades con valores extremadamente altos de MAPE, lo que indica que no es capaz de generar predicciones precisas. Aunque el MSE para K=20 es el más bajo en el conjunto de validación con 389.95, el MAPE es tan grande que muestra que las predicciones se desvían masivamente de los valores reales, lo que hace que este modelo sea ineficaz para la prediccion.
+
+Mejor valor de K: A partir de los resultados, el valor de K más óptimo sería 20, ya que tiene el menor MSE en validación (389.95), aunque la diferencia con K=30 es muy pequeña.
+
+K	MSE Train	MAPE Train	MSE Val	MAPE Test
+5	281.78	4.89e+12	425.84	2.81e+13
+10	322.07	6.66e+12	399.74	2.75e+13
+20	346.99	7.07e+12	389.95	2.83e+13
+30	358.35	7.27e+12	389.25	2.80e+13
+
+GBM: A pesar de tener el mejor MSE entre los modelos, el MAPE es incluso mayor que el de KNN. Este valor indica que el modelo no está generando predicciones útiles y posiblemente esté sobreajustando en el conjunto de entrenamiento, haciendo predicciones fuera de escala.
+
+valores de Evaluación en Entrenamiento:
+MSE: 352.50
+MAPE: 6936615750990.15 un valor excesivamente alto
+
+
